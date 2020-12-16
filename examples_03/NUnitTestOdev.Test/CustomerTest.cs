@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using NUnit.Framework;
 
@@ -50,6 +51,26 @@ namespace NUnitTestOdev.Test
             Assert.That(testDelegate, Throws.ArgumentException);
 
             
+        }
+        
+        [Test]
+        [TestCase("alihan.bayraktar@bayrktlihn")]
+        [TestCase("deniz.bayraktar@bayrktlihn.com")]
+        [TestCase("merve.bayraktar@bayrktlihn")]
+        public void Email_InvalidEmail_ThrowsArgumentException(String email)
+        {
+
+            Thread.Sleep(1000);
+
+            _customer = new Customer();
+            TestDelegate testDelegate = () =>
+            {
+                _customer.Email = email;
+            };
+
+            Assert.That(testDelegate, Throws.ArgumentException);
+
+
         }
 
         

@@ -117,5 +117,29 @@ namespace NUnitTestOdev.Test
 
         }
 
+        [Test]
+        public void ApproveOrder_NoEmail_ThrowException()
+        {
+            Cart cart = new Cart();
+            cart.AddProduct(_products[1], 10); // 300
+            cart.AddProduct(_products[2], 2); // 200
+
+            Order order = new Order(cart);
+
+            Customer customer = new Customer() { 
+                FirstName = "alihan",
+                LastName = "bayraktar"
+            };
+
+            customer.GiveOrder(order);
+
+            TestDelegate testDelegate = () =>
+            {
+                _manager.ApproveOrder(order);
+            };
+
+            Assert.That(testDelegate, Throws.ArgumentException);
+        }
+
     }
 }

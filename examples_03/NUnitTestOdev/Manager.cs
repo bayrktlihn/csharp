@@ -14,6 +14,9 @@ namespace NUnitTestOdev
             if (order.Customer == null)
                 throw new ArgumentException("No owner of the order");
 
+            if (order.Customer.Email == null)
+                throw new ArgumentException("No email owner of order");
+
             if (order.Status == Status.Approved)
                 throw new ArgumentException("Already The order is approved");
 
