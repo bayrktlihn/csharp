@@ -26,13 +26,6 @@ namespace Odev.Test
         
         }
 
-        public void Aaa()
-        {
-            Operation operation = OperationFactory.Create(1, 1, '+');
-
-            Task<double> r = operation.ApplyAsync();
-        }
-
         
     }
 }
