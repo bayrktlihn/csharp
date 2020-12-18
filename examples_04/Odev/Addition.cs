@@ -1,16 +1,15 @@
-﻿namespace Odev
-{
-    public class Addition : TwoOperation
-    {
-        public Addition(double param1, double param2):base(param1, param2)
-        {
-           
-        }
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-        public override double Apply()
-        {
-            return param1 + param2;
-        }
+namespace Odev
+{
+    public interface Operation
+    {
+        double Apply();
+        Task<double> ApplyAsync();
     }
 
 
