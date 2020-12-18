@@ -1,4 +1,6 @@
-﻿namespace Odev
+using System.Threading.Tasks;
+
+namespace Odev
 {
     public class Addition : TwoOperation
     {
@@ -10,6 +12,13 @@
         public override double Apply()
         {
             return param1 + param2;
+        }
+
+        public async override Task<double> ApplyAsync()
+        {
+            double result = await Task.Run(() => { return Apply(); });
+
+            return result;
         }
     }
 
