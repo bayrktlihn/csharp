@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +9,6 @@ namespace Odev
     public interface Operation
     {
         double Apply();
-        Task<double> ApplyAsync();
     }
 
 

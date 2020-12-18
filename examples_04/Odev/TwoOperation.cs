@@ -1,6 +1,4 @@
-using System.Threading.Tasks;
-
-namespace Odev
+﻿namespace Odev
 {
     public abstract class TwoOperation : Operation
     {
@@ -14,7 +12,6 @@ namespace Odev
         }
 
         public abstract double Apply();
-        public abstract Task<double> ApplyAsync();
     }
 
 
