@@ -1,5 +1,0 @@
-C:\Users\Z0048KEM\source\repos\Siemens_01\Odev\bin\Debug\Odev.dll
-C:\Users\Z0048KEM\source\repos\Siemens_01\Odev\bin\Debug\Odev.pdb
-C:\Users\Z0048KEM\source\repos\Siemens_01\Odev\obj\Debug\Odev.csproj.CoreCompileInputs.cache
-C:\Users\Z0048KEM\source\repos\Siemens_01\Odev\obj\Debug\Odev.dll
-C:\Users\Z0048KEM\source\repos\Siemens_01\Odev\obj\Debug\Odev.pdb
