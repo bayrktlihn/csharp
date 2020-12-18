@@ -1,15 +1,25 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Odev
 {
-    public interface Operation
+    public class Addition : TwoOperation
     {
-        double Apply();
-        Task<double> ApplyAsync();
+        public Addition(double param1, double param2):base(param1, param2)
+        {
+           
+        }
+
+        public override double Apply()
+        {
+            return param1 + param2;
+        }
+
+        public async override Task<double> ApplyAsync()
+        {
+            double result = await Task.Run(() => { return Apply(); });
+
+            return result;
+        }
     }
 
 
