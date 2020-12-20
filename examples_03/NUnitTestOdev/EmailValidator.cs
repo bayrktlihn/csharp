@@ -22,7 +22,6 @@ namespace NUnitTestOdev
             client.Timeout = -1;
             var request = new RestRequest(Method.GET);
             IRestResponse response = client.Execute(request);
-            Console.WriteLine(response.StatusCode);
 
             String content = response.Content;
 
