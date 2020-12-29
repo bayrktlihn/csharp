@@ -5,4 +5,4 @@
 * [Examples 3](examples_03)
 * [Examples 4](examples_04)
 * [Examples 5](examples_05)
-* [Examples 5](examples_06)
+* [Examples 6](examples_06)
