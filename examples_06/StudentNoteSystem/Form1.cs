@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,15 +40,12 @@ namespace Odeeev
                 String[] lines = File.ReadAllLines(path);
 
 
-                List<Student> studentList = new List<Student>();
-
                 foreach (String line in lines)
                 {
-                    Student student = Student.parse(line);
-                    studentList.Add(student);
+                    Student student = Student.Parse(line);
+                    AddStudentToListView(student);
                 }
 
-                FillStudentListView(studentList);
             }
             else
             {
@@ -61,24 +58,25 @@ namespace Odeeev
         
         }
 
+        private void AddStudentToListView(Student student)
+        {
+            ListViewItem lvi = studentListView.Items.Add(student.Number + "");
+
+
+            lvi.BackColor = student.IsPass ? Color.Green : Color.Red;
+
+            lvi.SubItems.Add(student.VisaNote + "");
+            lvi.SubItems.Add(student.FinalNote + "");
+            lvi.SubItems.Add(student.GetNoteAvg() + "");
+            lvi.SubItems.Add(student.IsPass + "");
+            lvi.SubItems.Add(student.LetterNote + "");
+        }
+
         private void FillStudentListView(List<Student> studentList)
         {
             foreach(Student student in studentList)
             {
-                ListViewItem lvi = studentListView.Items.Add(student.Number+"");
-
-               
-                    lvi.BackColor = student.IsPass ? Color.Green : Color.Red;
-                
-                
-                
-
-                lvi.SubItems.Add(student.VisaNote+"");
-                lvi.SubItems.Add(student.FinalNote + "");
-                lvi.SubItems.Add(student.GetNoteAvg()+"");
-                lvi.SubItems.Add(student.IsPass + "");
-                lvi.SubItems.Add(student.LetterNote + "");
-
+                AddStudentToListView(student);
             }
         }
 
